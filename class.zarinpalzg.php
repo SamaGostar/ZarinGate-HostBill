@@ -33,7 +33,7 @@ class zarinpalzg extends PaymentModule {
 
     public function drawForm() {
         function send($desc,$merchent,$amount,$redirect){
-	$client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', array('encoding'=>'UTF-8'));
+	$client = new SoapClient('https://de.zarinpal.com/pg/services/WebGate/wsdl', array('encoding'=>'UTF-8'));
 	$res = $client->PaymentRequest(
 	array(
 					'MerchantID' 	=> $merchent ,
@@ -83,7 +83,7 @@ class zarinpalzg extends PaymentModule {
     function callback() {  
 	
 			function get($merchent,$au,$amount){
-	$client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', array('encoding'=>'UTF-8'));
+	$client = new SoapClient('https://de.zarinpal.com/pg/services/WebGate/wsdl', array('encoding'=>'UTF-8'));
 	$res = $client->PaymentVerification(
 			array(
 					'MerchantID'	 => $merchent ,
